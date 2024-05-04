@@ -1,0 +1,17 @@
+{
+  "name": "prueba-flexxus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "funct": "ts-node functions/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "typescript": "5.4.5",
+    "ts-node": "10.9.2"
+  }
+}

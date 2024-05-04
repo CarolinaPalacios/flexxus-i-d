@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  gateway:
+    container_name: gateway
+    restart: always
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - api-network
+
+  auth:
+    container_name: auth
+    restart: always
+    build:
+      context: ./auth
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    networks:
+      - api-network
+
+  articles:
+    container_name: articles
+    restart: always
+    build:
+      context: ./articles
+      dockerfile: Dockerfile
+    ports:
+      - "3002:3002"
+    networks:
+      - api-network
+
+  database:
+    container_name: database
+    restart: always
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    ports:
+      - "3003:3003"
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge
